@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2021 John Park for Adafruit Industries
 # SPDX-License-Identifier: MIT
 # RaspberryPi Pico RP2040 Mechanical Keyboard
+# Modified by Daniel Peirce B.Sc. 2024 - leftside pico-corne with two layers
 
 import time
 import board
@@ -11,7 +12,7 @@ from adafruit_hid.keycode import Keycode
 from adafruit_hid.consumer_control import ConsumerControl
 from adafruit_hid.consumer_control_code import ConsumerControlCode
 
-print("---Pico Pad Keyboard---")
+print("---Leftside Pico-Corne---")
 
 led = DigitalInOut(board.LED)
 led.direction = Direction.OUTPUT
@@ -50,7 +51,7 @@ KEY = 2
 OTHER = 3
 
 keymap = {
-    (0): (KEY, [Keycode.TAB], [Keycode.TAB]),
+    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE]),
     (1): (KEY, [Keycode.Q], [Keycode.SIX]),
     (2): (KEY, [Keycode.W], [Keycode.SEVEN]),
     (3): (KEY, [Keycode.E], [Keycode.EIGHT]),
@@ -73,7 +74,7 @@ keymap = {
 
     (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL]),
     (19): (KEY, [Keycode.ENTER], [Keycode.ENTER]),
-    (20): (OTHER, [Keycode.J], [Keycode.J]),
+    (20): (OTHER, [], []),
 
 }
 
