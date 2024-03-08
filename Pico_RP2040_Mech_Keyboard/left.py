@@ -47,32 +47,33 @@ pins = (
 
 MEDIA = 1
 KEY = 2
+OTHER = 3
 
 keymap = {
-    (0): (KEY, [Keycode.TAB]),
-    (1): (KEY, [Keycode.Q]),
-    (2): (KEY, [Keycode.W]),
-    (3): (KEY, [Keycode.E]),
-    (4): (KEY, [Keycode.R]),
-    (5): (KEY, [Keycode.T]),
+    (0): (KEY, [Keycode.TAB], [Keycode.TAB]),
+    (1): (KEY, [Keycode.Q], [Keycode.SIX]),
+    (2): (KEY, [Keycode.W], [Keycode.SEVEN]),
+    (3): (KEY, [Keycode.E], [Keycode.EIGHT]),
+    (4): (KEY, [Keycode.R], [Keycode.NINE]),
+    (5): (KEY, [Keycode.T], [Keycode.ZERO]),
 
-    (6): (KEY, [Keycode.ALT]),
-    (7): (KEY, [Keycode.A]),
-    (8): (KEY, [Keycode.S]),
-    (9): (KEY, [Keycode.D]),
-    (10): (KEY, [Keycode.F]),
-    (11): (KEY, [Keycode.G]),
+    (6): (KEY, [Keycode.ALT], [Keycode.ALT]),
+    (7): (KEY, [Keycode.A], [Keycode.ONE]),
+    (8): (KEY, [Keycode.S], [Keycode.TWO]),
+    (9): (KEY, [Keycode.D], [Keycode.THREE]),
+    (10): (KEY, [Keycode.F], [Keycode.FOUR]),
+    (11): (KEY, [Keycode.G], [Keycode.FIVE]),
 
-    (12): (KEY, [Keycode.LEFT_SHIFT]),
-    (13): (KEY, [Keycode.Z]),
-    (14): (KEY, [Keycode.X]),
-    (15): (KEY, [Keycode.C]),
-    (16): (KEY, [Keycode.V]),
-    (17): (KEY, [Keycode.B]),
+    (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
+    (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET]),
+    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET]),
+    (15): (KEY, [Keycode.C], [Keycode.MINUS]),
+    (16): (KEY, [Keycode.V], [Keycode.EQUALS]),
+    (17): (KEY, [Keycode.B], [Keycode.BACKSLASH]),
 
-    (18): (KEY, [Keycode.CONTROL]),
-    (19): (KEY, [Keycode.ENTER]),
-    (20): (KEY, [Keycode.J]),
+    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL]),
+    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER]),
+    (20): (OTHER, [Keycode.J], [Keycode.J]),
 
 }
 
@@ -85,6 +86,7 @@ for i in range(len(pins)):
 
 
 switch_state = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+layer = 1
 
 while True:
     for button in range(21):
@@ -92,10 +94,15 @@ while True:
             if not switches[button].value:
                 try:
                     if keymap[button][0] == KEY:
-                        kbd.press(*keymap[button][1])
+                        kbd.press(*keymap[button][layer])
+                    elif keymap[button][0] == MEDIA:
+                        cc.send(keymap[button][layer])
                     else:
-                        cc.send(keymap[button][1])
+                        layer = layer + 1
+                        if layer > 2:
+                            layer = 1
                 except ValueError:  # deals w six key limit
+
                     pass
                 switch_state[button] = 1
 
@@ -103,7 +110,7 @@ while True:
             if switches[button].value:
                 try:
                     if keymap[button][0] == KEY:
-                        kbd.release(*keymap[button][1])
+                        kbd.release(*keymap[button][layer])
 
                 except ValueError:
                     pass
