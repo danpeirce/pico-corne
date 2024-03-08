@@ -1,4 +1,4 @@
-# Micropython Code for Corne like Keyboard
+# CircuitPython Code for Corne like Keyboard
 
 The design goals are for a DIY keyboard in a Corne like layout. 
 
@@ -10,7 +10,7 @@ The design goals are for a DIY keyboard in a Corne like layout.
 	   GPIO. Diodes are not needed because a matrix is not needed.
 	d. The only keys that need to be shared between sides are the layer keys.
 	
-Micropython Coding a Raspberry Pi Pico board for a split keyboard with 3x6 column staggered keys and 3 thumb keys.
+CircuitPython Coding a Raspberry Pi Pico board for a split keyboard with 3x6 column staggered keys and 3 thumb keys.
 
 ## Reference
 
@@ -27,7 +27,7 @@ So far I have built the left side only and implemented two layers.
 Currently I am using the left-side pico-corne with my left hand and a regular keyboard with my right hand. This gives me the split I am looking
 for and allows me to reach all the numbers and a lot of the punctuation with my left hand all near the home row.
 
-There is no direct connection between the left and right keyboards but this has not been an issue. Only the left custom keybaord has layers.
+There is no direct connection between the left and right keyboards but this has not been an issue. Only the left custom keyboard has layers.
 The layers are controlled with switch 20 which is the right most thumb key. Each press of this key increments the layer by one. Currently if 
 the layer number is greater than 3 then the layer is set back to one.
 
