@@ -20,7 +20,7 @@ led.value = True
 kbd = Keyboard(usb_hid.devices)
 cc = ConsumerControl(usb_hid.devices)
 
-# list of pins to use 
+# list of pins to use
 pins = (
     board.GP0,
     board.GP1,
@@ -37,7 +37,7 @@ pins = (
     board.GP12,
     board.GP13,
     board.GP14,
-    board.GP15,`
+    board.GP15,
     board.GP16,
     board.GP17,
     board.GP18,
@@ -54,22 +54,22 @@ keymap = {
     (2): (KEY, [Keycode.W]),
     (3): (KEY, [Keycode.E]),
     (4): (KEY, [Keycode.R]),
-    (5): (KEY, [Keycode, T]),
-    
+    (5): (KEY, [Keycode.T]),
+
     (6): (KEY, [Keycode.ALT]),
     (7): (KEY, [Keycode.A]),
     (8): (KEY, [Keycode.S]),
     (9): (KEY, [Keycode.D]),
     (10): (KEY, [Keycode.F]),
-    (11): (KEY, [Keycode.G]),  
-    
+    (11): (KEY, [Keycode.G]),
+
     (12): (KEY, [Keycode.LEFT_SHIFT]),
     (13): (KEY, [Keycode.Z]),
     (14): (KEY, [Keycode.X]),
     (15): (KEY, [Keycode.C]),
     (16): (KEY, [Keycode.V]),
     (17): (KEY, [Keycode.B]),
-    
+
     (18): (KEY, [Keycode.CONTROL]),
     (19): (KEY, [Keycode.ENTER]),
     (20): (KEY, [Keycode.J]),
