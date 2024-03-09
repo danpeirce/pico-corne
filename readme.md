@@ -3,12 +3,12 @@
 The design goals are for a DIY keyboard in a Corne like layout. 
 
 1. Keep it Simple. 
-    a. The code does not need to be generalized for all keyboards (not using KMK). 
-	b. The two halves are to have equal responsibility with minimal interaction. Connect both halves to a USB hub. 
+    1. The code does not need to be generalized for all keyboards (not using KMK). 
+	2. The two halves are to have equal responsibility with minimal interaction. Connect both halves to a USB hub. 
 	   Each half to get a Pico board and they both already have on board microB USB connectors.
-	c. Pico boards have more than enough GPIO to use one input per switch. There are 21 switches per side and each Pico has 26 
+	3. Pico boards have more than enough GPIO to use one input per switch. There are 21 switches per side and each Pico has 26 
 	   GPIO. Diodes are not needed because a matrix is not needed.
-	d. The only keys that need to be shared between sides are the layer keys.
+	4. The only keys that need to be shared between sides are the layer keys.
 	
 CircuitPython Coding a Raspberry Pi Pico board for a split keyboard with 3x6 column staggered keys and 3 thumb keys.
 
@@ -29,7 +29,7 @@ for and allows me to reach all the numbers and a lot of the punctuation with my 
 
 There is no direct connection between the left and right keyboards but this has not been an issue. Only the left custom keyboard has layers.
 The layers are controlled with switch 20 which is the right most thumb key. Each press of this key increments the layer by one. Currently if 
-the layer number is greater than 3 then the layer is set back to one.
+the layer number is greater than 2 then the layer is set back to one.
 
 ![](Layer1.png)  
 
