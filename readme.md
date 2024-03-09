@@ -2,15 +2,22 @@
 
 The design goals are for a DIY keyboard in a Corne like layout. 
 
-1. Keep it Simple. 
+1. Split keyboard with 3x6 column staggered keys and 3 thumb keys. 
+    1. The idea here is to have home keys plus keys no more than one row or column away from the home position 
+	   to avoid issues with reaching farther.
+	2. Keep close to an open source design for the 3D printed case. The Corne layout has a track record. Adjustments are being made
+	   so that a RPi Pico can be used. These boards are inexpensive, have lots of GPIO and can handle CircuitPython.
+2. Keep it Simple. 
     1. The code does not need to be generalized for all keyboards (not using KMK). 
-	2. The two halves are to have equal responsibility with minimal interaction. Connect both halves to a USB hub. 
+	2. The two halves are to have equal responsibility. Connect both halves to a USB hub. 
 	   Each half to get a Pico board and they both already have on board microB USB connectors.
 	3. Pico boards have more than enough GPIO to use one input per switch. There are 21 switches per side and each Pico has 26 
 	   GPIO. Diodes are not needed because a matrix is not needed.
-	4. The only keys that need to be shared between sides are the layer keys.
+3. Keep cost down. 
+    1. Use FDM 3D printer for parts that can be printed.
+	2. Use point to point wiring - no PCB. This is more work but it avoids ordering custom parts and shipping costs.
+4.  Using CircuitPython makes firmware changes easy. One just copies a text file to the Pico file system!
 	
-CircuitPython Coding a Raspberry Pi Pico board for a split keyboard with 3x6 column staggered keys and 3 thumb keys.
 
 ## Reference
 
