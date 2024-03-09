@@ -31,6 +31,8 @@ There is no direct connection between the left and right keyboards but this has 
 The layers are controlled with switch 20 which is the right most thumb key. Each press of this key increments the layer by one. Currently if 
 the layer number is greater than 3 then the layer is set back to one.
 
+![](Layer1.png)  ![](Layer1.png)
+
 ~~~~python
 keymap = {
     (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE]),
