@@ -26,17 +26,20 @@ The design goals are for a DIY keyboard in a Corne like layout.
 
 ## Implementation Progress
 
-So far I have built the left side only and implemented two layers. 
+So far I have built the left side only and implemented three layers for the left hand keyboard. 
+Currently I am using a standard US Keyboard for the right hand.
 
 * The base layer 1 does the alphabetic characters.
 * layer 2 does the numerals and much of the punctuation.
+* layer 3 has some Function keys, left over punctuation, backspace and delete
+    * Will likely make changes to Layer 3 after right side keyboard is built. 
 
 Currently I am using the left-side pico-corne with my left hand and a regular keyboard with my right hand. This gives me the split I am looking
 for and allows me to reach all the numbers and a lot of the punctuation with my left hand all near the home row.
 
 There is no direct connection between the left and right keyboards but this has not been an issue. Only the left custom keyboard has layers.
 The layers are controlled with switch 20 which is the right most thumb key. Each press of this key increments the layer by one. Currently if 
-the layer number is greater than 2 then the layer is set back to one.
+the layer number is greater than 3 then the layer is set back to one. The board LED now indicates layer one. The third thumb key indicates layer 1.
 
 ![](Layer1.png)  
 
