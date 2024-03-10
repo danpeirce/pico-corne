@@ -42,32 +42,34 @@ the layer number is greater than 2 then the layer is set back to one.
 
 ![](Layer2.png)
 
+![](Layer3.png)
+
 ~~~~python
 keymap = {
-    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE]),
-    (1): (KEY, [Keycode.Q], [Keycode.SIX]),
-    (2): (KEY, [Keycode.W], [Keycode.SEVEN]),
-    (3): (KEY, [Keycode.E], [Keycode.EIGHT]),
-    (4): (KEY, [Keycode.R], [Keycode.NINE]),
-    (5): (KEY, [Keycode.T], [Keycode.ZERO]),
+    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE], [Keycode.ESCAPE]),
+    (1): (KEY, [Keycode.Q], [Keycode.SIX], [Keycode.F1]),
+    (2): (KEY, [Keycode.W], [Keycode.SEVEN], [Keycode.F2]),
+    (3): (KEY, [Keycode.E], [Keycode.EIGHT], [Keycode.F3]),
+    (4): (KEY, [Keycode.R], [Keycode.NINE], [Keycode.F4]),
+    (5): (KEY, [Keycode.T], [Keycode.ZERO], [Keycode.F5]),
 
-    (6): (KEY, [Keycode.ALT], [Keycode.ALT]),
-    (7): (KEY, [Keycode.A], [Keycode.ONE]),
-    (8): (KEY, [Keycode.S], [Keycode.TWO]),
-    (9): (KEY, [Keycode.D], [Keycode.THREE]),
-    (10): (KEY, [Keycode.F], [Keycode.FOUR]),
-    (11): (KEY, [Keycode.G], [Keycode.FIVE]),
+    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.F6]),
+    (7): (KEY, [Keycode.A], [Keycode.ONE], [Keycode.F7]),
+    (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F8]),
+    (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F12]), 
+    (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.SEMICOLON]),
+    (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.QUOTE]),
 
-    (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
-    (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET]),
-    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET]),
-    (15): (KEY, [Keycode.C], [Keycode.MINUS]),
-    (16): (KEY, [Keycode.V], [Keycode.EQUALS]),
-    (17): (KEY, [Keycode.B], [Keycode.BACKSLASH]),
+    (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
+    (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET], [Keycode.GRAVE_ACCENT]), 
+    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET], [Keycode.COMMA]),
+    (15): (KEY, [Keycode.C], [Keycode.MINUS], [Keycode.PERIOD]),
+    (16): (KEY, [Keycode.V], [Keycode.EQUALS], [Keycode.FORWARD_SLASH]),
+    (17): (KEY, [Keycode.B], [Keycode.BACKSLASH], [Keycode.CAPS_LOCK]),
 
-    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL]),
-    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER]),
-    (20): (OTHER, [], []),
+    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.BACKSPACE]),
+    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER], [Keycode.DELETE]),
+    (20): (OTHER, [], [], []),
 
 }
 ~~~~
