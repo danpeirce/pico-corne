@@ -22,6 +22,7 @@ The design goals are for a DIY keyboard in a Corne like layout.
 ## Reference
 
 * [Pico_RP2040_Mech_Keyboard/code.py](https://github.com/adafruit/Adafruit_Learning_System_Guides/blob/main/Pico_RP2040_Mech_Keyboard/code.py)
+* [www.raspberrypi.com/.../pico-pinout.svg](https://www.raspberrypi.com/documentation/microcontrollers/images/pico-pinout.svg)
 * [Adafruit HID Library](https://docs.circuitpython.org/projects/hid/en/latest/)
 
 ## Implementation Progress
