@@ -84,7 +84,7 @@ keymap = {
 
 ![](img/pico.png)
 
-![](pico-corne-left-build04-und-w.png)
+![](img/pico-corne-left-build04-und-w.png)
 
 # The 3D Printed Case
 
