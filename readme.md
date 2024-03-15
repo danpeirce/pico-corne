@@ -78,6 +78,12 @@ keymap = {
 }
 ~~~~
 
+## Hard Wiring the Keyboard
+
+![](img/pico-corne-left-build05-und.png)
+
+![](img/pico.png)
+
 # The 3D Printed Case
 
 See https://github.com/danpeirce/scad-keyboard-cases?tab=readme-ov-file#corne-inspired-keyboard-case-modified-to-use-a-raspberry-pi-pico
