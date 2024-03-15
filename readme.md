@@ -80,11 +80,17 @@ keymap = {
 
 ## Hard Wiring the Keyboard
 
+### Left Side
+
 ![](img/pico-corne-left-build05-und.png)
 
 ![](img/pico.png)
 
 ![](img/pico-corne-left-build04-und-w.png)
+
+### Right side
+
+![](img/LayerRw.png)
 
 # The 3D Printed Case
 
