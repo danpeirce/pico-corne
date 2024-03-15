@@ -84,6 +84,8 @@ keymap = {
 
 ![](img/pico.png)
 
+![](pico-corne-left-build04-und-w.png)
+
 # The 3D Printed Case
 
 See https://github.com/danpeirce/scad-keyboard-cases?tab=readme-ov-file#corne-inspired-keyboard-case-modified-to-use-a-raspberry-pi-pico
