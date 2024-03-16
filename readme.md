@@ -80,7 +80,7 @@ keymap = {
 
 ## Hard Wiring the Keyboard
 
-### Left Side
+### Left Side (bottom view)
 
 ![](img/pico-corne-left-build05-und.png)
 
@@ -88,7 +88,7 @@ keymap = {
 
 ![](img/pico-corne-left-build04-und-w.png)
 
-### Right side
+### Right side (bottom view)
 
 ![](img/LayerRw.png)
 
