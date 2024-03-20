@@ -44,9 +44,9 @@ the layer number is greater than 3 then the layer is set back to one. The board 
 
 ![](Layer1.png)  ![](Layer1R.png)
 
-![](Layer2.png)
+![](Layer2.png)  ![](Layer2R.png)
 
-![](Layer3.png)
+![](Layer3.png)  ![](Layer3R.png)
 
 ~~~~python
 keymap = {
