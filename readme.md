@@ -42,7 +42,7 @@ There is no direct connection between the left and right keyboards but this has 
 The layers are controlled with switch 20 which is the right most thumb key. Each press of this key increments the layer by one. Currently if 
 the layer number is greater than 3 then the layer is set back to one. The board LED now indicates layer one. The third thumb key indicates layer 1.
 
-![](Layer1.png)  
+![](Layer1.png)  ![](Layer1R.png)
 
 ![](Layer2.png)
 
