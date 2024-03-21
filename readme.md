@@ -33,20 +33,27 @@ Currently I am using a standard US Keyboard for the right hand.
 * The base layer 1 does the alphabetic characters.
 * layer 2 does the numerals and much of the punctuation.
 * layer 3 has some Function keys, left over punctuation, backspace and delete
-    * Will likely make changes to Layer 3 after right side keyboard is built. 
+    * Will likely make changes to Layer 3 after right side keyboard is built. *
 
 Currently I am using the left-side pico-corne with my left hand and a regular keyboard with my right hand. This gives me the split I am looking
 for and allows me to reach all the numbers and a lot of the punctuation with my left hand all near the home row.
 
 There is no direct connection between the left and right keyboards but this has not been an issue. Only the left custom keyboard has layers.
 The layers are controlled with switch 20 which is the right most thumb key. Each press of this key increments the layer by one. Currently if 
-the layer number is greater than 3 then the layer is set back to one. The board LED now indicates layer one. The third thumb key indicates layer 1.
+the layer number is greater than 3 then the layer is set back to one. The board LED now indicates layer one. The third thumb key increments the layer
+on the same side of the split keyboard.
+
+Work is just starting on the right side firmware. Each side runs its own program which differs in the keymap dictionary. 
 
 ![](Layer1.png)  ![](Layer1R.png)
 
 ![](Layer2.png)  ![](Layer2R.png)
 
 ![](Layer3.png)  ![](Layer3R.png)
+
+### Left side keymap dictionary
+
+*I'm planing to make substantial changes to the left third layer after the right side is completed.*
 
 ~~~~python
 keymap = {
@@ -77,6 +84,10 @@ keymap = {
 
 }
 ~~~~
+
+### Right side keymap dictionary
+
+*work in progress*
 
 ## Hard Wiring the Keyboard
 
