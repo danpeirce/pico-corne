@@ -85,9 +85,97 @@ keymap = {
 }
 ~~~~
 
+### Pin Assignment Left
+
+~~~~python
+# list of pins to use
+pins = (
+    board.GP0,
+    board.GP1,
+    board.GP2,
+    board.GP3,
+    board.GP4,
+    board.GP5,
+    board.GP6,
+    board.GP7,
+    board.GP8,
+    board.GP9,
+    board.GP10,
+    board.GP11,
+    board.GP12,
+    board.GP13,
+    board.GP14,
+    board.GP15,
+    board.GP16,
+    board.GP17,
+    board.GP18,
+    board.GP19,
+    board.GP20,
+)
+~~~~
+
 ### Right side keymap dictionary
 
 *work in progress*
+
+~~~~python
+keymap = {
+    (0): (KEY, [Keycode.BACKSPACE], [Keycode.BACKSPACE], [Keycode.BACKSPACE]),
+    (1): (KEY, [Keycode.P], [Keycode.DELETE], [Keycode.KEYPAD_MINUS]),
+    (2): (KEY, [Keycode.O], [Keycode.PAGE_UP], [Keycode.KEYPAD_NINE]),
+    (3): (KEY, [Keycode.I], [Keycode.UP_ARROW], [Keycode.KEYPAD_EIGHT]),
+    (4): (KEY, [Keycode.U], [Keycode.HOME], [Keycode.KEYPAD_SEVEN]),
+    (5): (KEY, [Keycode.Y], [Keycode.PRINT_SCREEN], [Keycode.KEYPAD_FORWARD_SLASH]),
+
+    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.RIGHT_ALT]),
+    (7): (KEY, [Keycode.SEMICOLON], [Keycode.ENTER], [Keycode.KEYPAD_PLUS]),
+    (8): (KEY, [Keycode.L], [Keycode.RIGHT_ARROW], [Keycode.KEYPAD_SIX]),
+    (9): (KEY, [Keycode.K], [Keycode.DOWN_ARROW], [Keycode.KEYPAD_FIVE]),
+    (10): (KEY, [Keycode.J], [Keycode.LEFT_ARROW], [Keycode.KEYPAD_FOUR]),
+    (11): (KEY, [Keycode.H], [Keycode.SCROLL_LOCK], [Keycode.KEYPAD_ASTERISK]),
+
+    (12): (KEY, [Keycode.RIGHT_SHIFT], [Keycode.RIGHT_SHIFT], [Keycode.RIGHT_SHIFT]),
+    (13): (KEY, [Keycode.FORWARD_SLASH], [Keycode.APPLICATION], [Keycode.KEYPAD_PERIOD]),
+    (14): (KEY, [Keycode.PERIOD], [Keycode.PAGE_DOWN], [Keycode.KEYPAD_THREE]),
+    (15): (KEY, [Keycode.COMMA], [Keycode.TAB], [Keycode.KEYPAD_TWO]),
+    (16): (KEY, [Keycode.M], [Keycode.END], [Keycode.KEYPAD_ONE]),
+    (17): (KEY, [Keycode.N], [Keycode.PAUSE], [Keycode.KEYPAD_ZERO]),
+
+    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.CONTROL]),
+    (19): (KEY, [Keycode.SPACEBAR], [Keycode.SPACEBAR], [Keycode.SPACEBAR]),
+    (20): (OTHER, [], [], []),
+
+}
+~~~~
+
+### Pin Assignment Right
+
+~~~~python
+# list of pins to use
+pins = (
+    board.GP28,
+    board.GP27,
+    board.GP26,
+    board.GP22,
+    board.GP21,
+    board.GP20,
+    board.GP19,
+    board.GP18,
+    board.GP17,
+    board.GP16,
+    board.GP6,
+    board.GP5,
+    board.GP12,
+    board.GP11,
+    board.GP10,
+    board.GP9,
+    board.GP8,
+    board.GP7,
+    board.GP15,
+    board.GP14,
+    board.GP13,
+)
+~~~~
 
 ## Hard Wiring the Keyboard
 
