@@ -27,23 +27,21 @@ The design goals are for a DIY keyboard in a Corne like layout.
 
 ## Implementation Progress
 
-So far I have built the left side only and implemented three layers for the left hand keyboard. 
-Currently I am using a standard US Keyboard for the right hand.
+### Left Side
 
 * The base layer 1 does the alphabetic characters.
 * layer 2 does the numerals and much of the punctuation.
-* layer 3 has some Function keys, left over punctuation, backspace and delete
-    * Will likely make changes to Layer 3 after right side keyboard is built. *
+* layer 3 does Function keys, left over punctuation and cap-lock.
 
-Currently I am using the left-side pico-corne with my left hand and a regular keyboard with my right hand. This gives me the split I am looking
-for and allows me to reach all the numbers and a lot of the punctuation with my left hand all near the home row.
+### Right Side
 
-There is no direct connection between the left and right keyboards but this has not been an issue. Only the left custom keyboard has layers.
-The layers are controlled with switch 20 which is the right most thumb key. Each press of this key increments the layer by one. Currently if 
-the layer number is greater than 3 then the layer is set back to one. The board LED now indicates layer one. The third thumb key increments the layer
-on the same side of the split keyboard.
+* The base layer 1 does the alphabetic characters.
+* layer 2 does navigation.
+* layer 3 numpad characters.
 
-Work is just starting on the right side firmware. Each side runs its own program which differs in the keymap dictionary. 
+There is no direct connection between the left and right keyboards. Each half has a Layer key. When a layer key is pressed the active layer on 
+that side is incremented by one.
+
 
 ![](Layer1.png)  ![](Layer1R.png)
 
@@ -57,29 +55,29 @@ Work is just starting on the right side firmware. Each side runs its own program
 
 ~~~~python
 keymap = {
-    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE], [Keycode.ESCAPE]),
-    (1): (KEY, [Keycode.Q], [Keycode.SIX], [Keycode.F1]),
-    (2): (KEY, [Keycode.W], [Keycode.SEVEN], [Keycode.F2]),
-    (3): (KEY, [Keycode.E], [Keycode.EIGHT], [Keycode.F3]),
-    (4): (KEY, [Keycode.R], [Keycode.NINE], [Keycode.F4]),
-    (5): (KEY, [Keycode.T], [Keycode.ZERO], [Keycode.F5]),
+    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE], [Keycode.F7]),
+    (1): (KEY, [Keycode.Q], [Keycode.SIX], [Keycode.F8]),
+    (2): (KEY, [Keycode.W], [Keycode.SEVEN], [Keycode.F9]),
+    (3): (KEY, [Keycode.E], [Keycode.EIGHT], [Keycode.F10]),
+    (4): (KEY, [Keycode.R], [Keycode.NINE], [Keycode.F11]),
+    (5): (KEY, [Keycode.T], [Keycode.ZERO], [Keycode.F12]),
 
-    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.F6]),
-    (7): (KEY, [Keycode.A], [Keycode.ONE], [Keycode.F7]),
-    (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F8]),
-    (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F12]), 
-    (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.SEMICOLON]),
+    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.F1]),
+    (7): (KEY, [Keycode.A], [Keycode.ONE], [Keycode.F2]),
+    (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F3]),
+    (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F4]),
+    (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.F5]),
     (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.QUOTE]),
 
     (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
-    (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET], [Keycode.GRAVE_ACCENT]), 
-    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET], [Keycode.COMMA]),
-    (15): (KEY, [Keycode.C], [Keycode.MINUS], [Keycode.PERIOD]),
-    (16): (KEY, [Keycode.V], [Keycode.EQUALS], [Keycode.FORWARD_SLASH]),
+    (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET], [Keycode.GRAVE_ACCENT]),
+    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET], [Keycode.ALT]),
+    (15): (KEY, [Keycode.C], [Keycode.MINUS], [Keycode.WINDOWS]),
+    (16): (KEY, [Keycode.V], [Keycode.EQUALS], [Keycode.QUOTE]),
     (17): (KEY, [Keycode.B], [Keycode.BACKSLASH], [Keycode.CAPS_LOCK]),
 
-    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.BACKSPACE]),
-    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER], [Keycode.DELETE]),
+    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.CONTROL]),
+    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER], [Keycode.ENTER]),
     (20): (OTHER, [], [], []),
 
 }
