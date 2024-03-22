@@ -51,29 +51,29 @@ KEY = 2
 OTHER = 3
 
 keymap = {
-    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE], [Keycode.ESCAPE]),
-    (1): (KEY, [Keycode.Q], [Keycode.SIX], [Keycode.F1]),
-    (2): (KEY, [Keycode.W], [Keycode.SEVEN], [Keycode.F2]),
-    (3): (KEY, [Keycode.E], [Keycode.EIGHT], [Keycode.F3]),
-    (4): (KEY, [Keycode.R], [Keycode.NINE], [Keycode.F4]),
-    (5): (KEY, [Keycode.T], [Keycode.ZERO], [Keycode.F5]),
+    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE], [Keycode.F7]),
+    (1): (KEY, [Keycode.Q], [Keycode.SIX], [Keycode.F8]),
+    (2): (KEY, [Keycode.W], [Keycode.SEVEN], [Keycode.F9]),
+    (3): (KEY, [Keycode.E], [Keycode.EIGHT], [Keycode.F10]),
+    (4): (KEY, [Keycode.R], [Keycode.NINE], [Keycode.F11]),
+    (5): (KEY, [Keycode.T], [Keycode.ZERO], [Keycode.F12]),
 
-    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.F6]),
-    (7): (KEY, [Keycode.A], [Keycode.ONE], [Keycode.F7]),
-    (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F8]),
-    (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F12]),
-    (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.SEMICOLON]),
+    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.F1]),
+    (7): (KEY, [Keycode.A], [Keycode.ONE], [Keycode.F2]),
+    (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F3]),
+    (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F4]),
+    (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.F5]),
     (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.QUOTE]),
 
     (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
     (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET], [Keycode.GRAVE_ACCENT]),
-    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET], [Keycode.COMMA]),
-    (15): (KEY, [Keycode.C], [Keycode.MINUS], [Keycode.PERIOD]),
-    (16): (KEY, [Keycode.V], [Keycode.EQUALS], [Keycode.FORWARD_SLASH]),
+    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET], [Keycode.ALT]),
+    (15): (KEY, [Keycode.C], [Keycode.MINUS], [Keycode.WINDOWS]),
+    (16): (KEY, [Keycode.V], [Keycode.EQUALS], [Keycode.QUOTE]),
     (17): (KEY, [Keycode.B], [Keycode.BACKSLASH], [Keycode.CAPS_LOCK]),
 
-    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.BACKSPACE]),
-    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER], [Keycode.DELETE]),
+    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.CONTROL]),
+    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER], [Keycode.ENTER]),
     (20): (OTHER, [], [], []),
 
 }
