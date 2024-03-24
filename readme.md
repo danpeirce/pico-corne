@@ -23,6 +23,7 @@ The design goals are for a DIY keyboard in a Corne like layout.
 
 * [Pico_RP2040_Mech_Keyboard/code.py](https://github.com/adafruit/Adafruit_Learning_System_Guides/blob/main/Pico_RP2040_Mech_Keyboard/code.py)
 * [www.raspberrypi.com/.../pico-pinout.svg](https://www.raspberrypi.com/documentation/microcontrollers/images/pico-pinout.svg)
+* [Adafruit code tutorial](https://learn.adafruit.com/diy-pico-mechanical-keyboard-with-fritzing-circuitpython/code-the-pico-keyboard)
 * [Adafruit HID Library](https://docs.circuitpython.org/projects/hid/en/latest/)
 
 ## Implementation Progress
@@ -49,11 +50,27 @@ that side is incremented by one.
 
 ![](Layer3.png)  ![](Layer3R.png)
 
+media
+
+![](Layer3media.png)
+
+
 ### Left side keymap dictionary
 
-*I'm planing to make substantial changes to the left third layer after the right side is completed.*
+There are two versions of the left side keymap.
 
-~~~~python
+* left.py contains twelve function keys on the third level. 
+* left-media.py has media keys in place of some of the function keys.
+
+Either file can be copied to code.py on the CIRCUITPY drive for the left keyboard to change to the other layout. I don't use
+function keys often and almost never use the function keys past F5.
+
+The format of the two left keymaps is different because the original format used was not adequate for the addition of media 
+controls which were first used in **left-media.py**.
+
+#### From left.py
+
+~~~~python {}[left.py]
 keymap = {
     (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE], [Keycode.F7]),
     (1): (KEY, [Keycode.Q], [Keycode.SIX], [Keycode.F8]),
@@ -67,7 +84,7 @@ keymap = {
     (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F3]),
     (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F4]),
     (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.F5]),
-    (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.QUOTE]),
+    (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.F6]),
 
     (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
     (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET], [Keycode.GRAVE_ACCENT]),
@@ -79,6 +96,50 @@ keymap = {
     (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.CONTROL]),
     (19): (KEY, [Keycode.ENTER], [Keycode.ENTER], [Keycode.ENTER]),
     (20): (OTHER, [], [], []),
+
+}
+~~~~
+
+#### From left-media.py
+
+~~~~python
+keymap = {
+    (0): ((KEY, [Keycode.TAB]), (KEY, [Keycode.ESCAPE]), (KEY, [Keycode.F7])),
+    (1): ((KEY, [Keycode.Q]), (KEY, [Keycode.SIX]), (MEDIA, ConsumerControlCode.MUTE)),
+    # (1): ((KEY, [Keycode.Q]), (KEY, [Keycode.SIX]), (KEY, [Keycode.F8])),
+    (2): ((KEY, [Keycode.W]), (KEY, [Keycode.SEVEN]),
+          (MEDIA, ConsumerControlCode.VOLUME_DECREMENT)),
+    # (2): ((KEY, [Keycode.W]), (KEY, [Keycode.SEVEN]), (KEY, [Keycode.F9])),
+    (3): ((KEY, [Keycode.E]), (KEY, [Keycode.EIGHT]),
+          (MEDIA, ConsumerControlCode.VOLUME_INCREMENT)),
+    # (3): ((KEY, [Keycode.E]), (KEY, [Keycode.EIGHT]), (KEY, [Keycode.F10])),
+    (4): ((KEY, [Keycode.R]), (KEY, [Keycode.NINE]),
+          (MEDIA, ConsumerControlCode.PLAY_PAUSE)),
+    # (4): ((KEY, [Keycode.R]), (KEY, [Keycode.NINE]), (KEY, [Keycode.F11])),
+    (5): ((KEY, [Keycode.T]), (KEY, [Keycode.ZERO]), (KEY, [Keycode.F12])),
+
+    (6): ((KEY, [Keycode.ALT]), (KEY, [Keycode.ALT]), (KEY, [Keycode.F1])),
+    (7): ((KEY, [Keycode.A]), (KEY, [Keycode.ONE]), (KEY, [Keycode.F2])),
+    (8): ((KEY, [Keycode.S]), (KEY, [Keycode.TWO]), (KEY, [Keycode.F3])),
+    (9): ((KEY, [Keycode.D]), (KEY, [Keycode.THREE]), (KEY, [Keycode.F4])),
+    (10): ((KEY, [Keycode.F]), (KEY, [Keycode.FOUR]), (KEY, [Keycode.F5])),
+    (11): ((KEY, [Keycode.G]), (KEY, [Keycode.FIVE]),
+           (MEDIA, ConsumerControlCode.STOP)),
+    # (11): ((KEY, [Keycode.G]), (KEY, [Keycode.FIVE]), (KEY, [Keycode.F6])),
+
+    (12): ((KEY, [Keycode.LEFT_SHIFT]),
+           (KEY, [Keycode.LEFT_SHIFT]), (KEY, [Keycode.LEFT_SHIFT])),
+    (13): ((KEY, [Keycode.Z]),
+           (KEY, [Keycode.LEFT_BRACKET]), (KEY, [Keycode.GRAVE_ACCENT])),
+    (14): ((KEY, [Keycode.X]), (KEY, [Keycode.RIGHT_BRACKET]), (KEY, [Keycode.ALT])),
+    (15): ((KEY, [Keycode.C]), (KEY, [Keycode.MINUS]), (KEY, [Keycode.WINDOWS])),
+    (16): ((KEY, [Keycode.V]), (KEY, [Keycode.EQUALS]), (KEY, [Keycode.QUOTE])),
+    (17): ((KEY, [Keycode.B]), (KEY, [Keycode.BACKSLASH]), (KEY, [Keycode.CAPS_LOCK])),
+
+    (18): ((KEY, [Keycode.CONTROL]),
+           (KEY, [Keycode.CONTROL]), (KEY, [Keycode.CONTROL])),
+    (19): ((KEY, [Keycode.ENTER]), (KEY, [Keycode.ENTER]), (KEY, [Keycode.ENTER])),
+    (20): ((OTHER, []), (OTHER, []), (OTHER, [])),
 
 }
 ~~~~
@@ -113,8 +174,6 @@ pins = (
 ~~~~
 
 ### Right side keymap dictionary
-
-*work in progress*
 
 ~~~~python
 keymap = {

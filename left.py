@@ -63,7 +63,7 @@ keymap = {
     (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F3]),
     (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F4]),
     (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.F5]),
-    (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.QUOTE]),
+    (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.F6]),
 
     (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
     (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET], [Keycode.GRAVE_ACCENT]),
