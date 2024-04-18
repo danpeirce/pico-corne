@@ -43,6 +43,8 @@ The design goals are for a DIY keyboard in a Corne like layout.
 There is no direct connection between the left and right keyboards. Each half has a Layer key. When a layer key is pressed the active layer on 
 that side is incremented by one.
 
+On the left side the combination **left-shift + left-Layer** switches to layer1.
+
 
 ![](Layer1.png)  ![](Layer1R.png)
 
