@@ -44,6 +44,7 @@ There is no direct connection between the left and right keyboards. Each half ha
 that side is incremented by one.
 
 On the left side the combination **left-shift + left-Layer** switches to layer1.
+On the right side the combination **right-shift + right-Layer** switches to layer1.
 
 
 ![](Layer1.png)  ![](Layer1R.png)
@@ -70,34 +71,47 @@ function keys often and almost never use the function keys past F5.
 The format of the two left keymaps is different because the original format used was not adequate for the addition of media 
 controls which were first used in **left-media.py**.
 
-#### From left.py
+#### From left-levels3.py
 
-~~~~python {}[left.py]
+~~~~python
 keymap = {
-    (0): (KEY, [Keycode.TAB], [Keycode.ESCAPE], [Keycode.F7]),
-    (1): (KEY, [Keycode.Q], [Keycode.SIX], [Keycode.F8]),
-    (2): (KEY, [Keycode.W], [Keycode.SEVEN], [Keycode.F9]),
-    (3): (KEY, [Keycode.E], [Keycode.EIGHT], [Keycode.F10]),
-    (4): (KEY, [Keycode.R], [Keycode.NINE], [Keycode.F11]),
-    (5): (KEY, [Keycode.T], [Keycode.ZERO], [Keycode.F12]),
+    (0): ((KEY, [Keycode.TAB]), (KEY, [Keycode.ESCAPE]), (KEY, [Keycode.F7])),
+    # (1): ((KEY, [Keycode.Q]), (KEY, [Keycode.SIX]),
+    #     (MEDIA, ConsumerControlCode.MUTE)),
+    (1): ((KEY, [Keycode.Q]), (KEY, [Keycode.SIX]), (KEY, [Keycode.F8])),
+    # (2): ((KEY, [Keycode.W]), (KEY, [Keycode.SEVEN]),
+    #     (MEDIA, ConsumerControlCode.VOLUME_DECREMENT)),
+    (2): ((KEY, [Keycode.W]), (KEY, [Keycode.SEVEN]), (KEY, [Keycode.F9])),
+    # (3): ((KEY, [Keycode.E]), (KEY, [Keycode.EIGHT]),
+    #     (MEDIA, ConsumerControlCode.VOLUME_INCREMENT)),
+    (3): ((KEY, [Keycode.E]), (KEY, [Keycode.EIGHT]), (KEY, [Keycode.F10])),
+    # (4): ((KEY, [Keycode.R]), (KEY, [Keycode.NINE]),
+    #      (MEDIA, ConsumerControlCode.PLAY_PAUSE)),
+    (4): ((KEY, [Keycode.R]), (KEY, [Keycode.NINE]), (KEY, [Keycode.F11])),
+    (5): ((KEY, [Keycode.T]), (KEY, [Keycode.ZERO]), (KEY, [Keycode.F12])),
 
-    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.F1]),
-    (7): (KEY, [Keycode.A], [Keycode.ONE], [Keycode.F2]),
-    (8): (KEY, [Keycode.S], [Keycode.TWO], [Keycode.F3]),
-    (9): (KEY, [Keycode.D], [Keycode.THREE], [Keycode.F4]),
-    (10): (KEY, [Keycode.F], [Keycode.FOUR], [Keycode.F5]),
-    (11): (KEY, [Keycode.G], [Keycode.FIVE], [Keycode.F6]),
+    (6): ((KEY, [Keycode.ALT]), (KEY, [Keycode.ALT]), (KEY, [Keycode.F1])),
+    (7): ((KEY, [Keycode.A]), (KEY, [Keycode.ONE]), (KEY, [Keycode.F2])),
+    (8): ((KEY, [Keycode.S]), (KEY, [Keycode.TWO]), (KEY, [Keycode.F3])),
+    (9): ((KEY, [Keycode.D]), (KEY, [Keycode.THREE]), (KEY, [Keycode.F4])),
+    (10): ((KEY, [Keycode.F]), (KEY, [Keycode.FOUR]), (KEY, [Keycode.F5])),
+    # (11): ((KEY, [Keycode.G]), (KEY, [Keycode.FIVE]),
+    #       (MEDIA, ConsumerControlCode.STOP)),
+    (11): ((KEY, [Keycode.G]), (KEY, [Keycode.FIVE]), (KEY, [Keycode.F6])),
 
-    (12): (KEY, [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT], [Keycode.LEFT_SHIFT]),
-    (13): (KEY, [Keycode.Z], [Keycode.LEFT_BRACKET], [Keycode.GRAVE_ACCENT]),
-    (14): (KEY, [Keycode.X], [Keycode.RIGHT_BRACKET], [Keycode.ALT]),
-    (15): (KEY, [Keycode.C], [Keycode.MINUS], [Keycode.WINDOWS]),
-    (16): (KEY, [Keycode.V], [Keycode.EQUALS], [Keycode.QUOTE]),
-    (17): (KEY, [Keycode.B], [Keycode.BACKSLASH], [Keycode.CAPS_LOCK]),
+    (12): ((KEY, [Keycode.LEFT_SHIFT]),
+           (KEY, [Keycode.LEFT_SHIFT]), (KEY, [Keycode.LEFT_SHIFT])),
+    (13): ((KEY, [Keycode.Z]),
+           (KEY, [Keycode.LEFT_BRACKET]), (KEY, [Keycode.GRAVE_ACCENT])),
+    (14): ((KEY, [Keycode.X]), (KEY, [Keycode.RIGHT_BRACKET]), (KEY, [Keycode.ALT])),
+    (15): ((KEY, [Keycode.C]), (KEY, [Keycode.MINUS]), (KEY, [Keycode.WINDOWS])),
+    (16): ((KEY, [Keycode.V]), (KEY, [Keycode.EQUALS]), (KEY, [Keycode.QUOTE])),
+    (17): ((KEY, [Keycode.B]), (KEY, [Keycode.BACKSLASH]), (KEY, [Keycode.CAPS_LOCK])),
 
-    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.CONTROL]),
-    (19): (KEY, [Keycode.ENTER], [Keycode.ENTER], [Keycode.ENTER]),
-    (20): (OTHER, [], [], []),
+    (18): ((KEY, [Keycode.CONTROL]),
+           (KEY, [Keycode.CONTROL]), (KEY, [Keycode.CONTROL])),
+    (19): ((KEY, [Keycode.ENTER]), (KEY, [Keycode.ENTER]), (KEY, [Keycode.ENTER])),
+    (20): ((OTHER, []), (OTHER, []), (OTHER, [])),
 
 }
 ~~~~
@@ -177,32 +191,47 @@ pins = (
 
 ### Right side keymap dictionary
 
-~~~~python
+#### From right-level.py
+
+~~~~python 
 keymap = {
-    (0): (KEY, [Keycode.BACKSPACE], [Keycode.BACKSPACE], [Keycode.BACKSPACE]),
-    (1): (KEY, [Keycode.P], [Keycode.DELETE], [Keycode.KEYPAD_MINUS]),
-    (2): (KEY, [Keycode.O], [Keycode.PAGE_UP], [Keycode.KEYPAD_NINE]),
-    (3): (KEY, [Keycode.I], [Keycode.UP_ARROW], [Keycode.KEYPAD_EIGHT]),
-    (4): (KEY, [Keycode.U], [Keycode.HOME], [Keycode.KEYPAD_SEVEN]),
-    (5): (KEY, [Keycode.Y], [Keycode.PRINT_SCREEN], [Keycode.KEYPAD_FORWARD_SLASH]),
+    (0): ((KEY, [Keycode.BACKSPACE]), (KEY,  [Keycode.BACKSPACE]),
+          (KEY,  [Keycode.BACKSPACE])),
+    (1): ((KEY, [Keycode.P]), (KEY,  [Keycode.DELETE]), (KEY,  [Keycode.KEYPAD_MINUS])),
+    (2): ((KEY, [Keycode.O]), (KEY,  [Keycode.PAGE_UP]), (KEY,  [Keycode.KEYPAD_NINE])),
+    (3): ((KEY, [Keycode.I]), (KEY,  [Keycode.UP_ARROW]),
+          (KEY,  [Keycode.KEYPAD_EIGHT])),
+    (4): ((KEY, [Keycode.U]), (KEY,  [Keycode.HOME]), (KEY,  [Keycode.KEYPAD_SEVEN])),
+    (5): ((KEY, [Keycode.Y]), (KEY,  [Keycode.PRINT_SCREEN]),
+          (KEY,  [Keycode.KEYPAD_FORWARD_SLASH])),
 
-    (6): (KEY, [Keycode.ALT], [Keycode.ALT], [Keycode.RIGHT_ALT]),
-    (7): (KEY, [Keycode.SEMICOLON], [Keycode.ENTER], [Keycode.KEYPAD_PLUS]),
-    (8): (KEY, [Keycode.L], [Keycode.RIGHT_ARROW], [Keycode.KEYPAD_SIX]),
-    (9): (KEY, [Keycode.K], [Keycode.DOWN_ARROW], [Keycode.KEYPAD_FIVE]),
-    (10): (KEY, [Keycode.J], [Keycode.LEFT_ARROW], [Keycode.KEYPAD_FOUR]),
-    (11): (KEY, [Keycode.H], [Keycode.SCROLL_LOCK], [Keycode.KEYPAD_ASTERISK]),
+    (6): ((KEY, [Keycode.ALT]), (KEY,  [Keycode.ALT]), (KEY,  [Keycode.RIGHT_ALT])),
+    (7): ((KEY, [Keycode.SEMICOLON]), (KEY,  [Keycode.ENTER]),
+          (KEY,  [Keycode.KEYPAD_PLUS])),
+    (8): ((KEY, [Keycode.L]), (KEY,  [Keycode.RIGHT_ARROW]),
+          (KEY,  [Keycode.KEYPAD_SIX])),
+    (9): ((KEY, [Keycode.K]), (KEY,  [Keycode.DOWN_ARROW]),
+          (KEY,  [Keycode.KEYPAD_FIVE])),
+    (10): ((KEY, [Keycode.J]), (KEY,  [Keycode.LEFT_ARROW]),
+           (KEY,  [Keycode.KEYPAD_FOUR])),
+    (11): ((KEY, [Keycode.H]), (KEY,  [Keycode.SCROLL_LOCK]),
+           (KEY,  [Keycode.KEYPAD_ASTERISK])),
 
-    (12): (KEY, [Keycode.RIGHT_SHIFT], [Keycode.RIGHT_SHIFT], [Keycode.RIGHT_SHIFT]),
-    (13): (KEY, [Keycode.FORWARD_SLASH], [Keycode.APPLICATION], [Keycode.KEYPAD_PERIOD]),
-    (14): (KEY, [Keycode.PERIOD], [Keycode.PAGE_DOWN], [Keycode.KEYPAD_THREE]),
-    (15): (KEY, [Keycode.COMMA], [Keycode.TAB], [Keycode.KEYPAD_TWO]),
-    (16): (KEY, [Keycode.M], [Keycode.END], [Keycode.KEYPAD_ONE]),
-    (17): (KEY, [Keycode.N], [Keycode.PAUSE], [Keycode.KEYPAD_ZERO]),
+    (12): ((KEY, [Keycode.RIGHT_SHIFT]), (KEY,  [Keycode.RIGHT_SHIFT]),
+           (KEY,  [Keycode.RIGHT_SHIFT])),
+    (13): ((KEY, [Keycode.FORWARD_SLASH]), (KEY,  [Keycode.APPLICATION]),
+           (KEY,  [Keycode.KEYPAD_PERIOD])),
+    (14): ((KEY, [Keycode.PERIOD]), (KEY,  [Keycode.PAGE_DOWN]),
+           (KEY,  [Keycode.KEYPAD_THREE])),
+    (15): ((KEY, [Keycode.COMMA]), (KEY,  [Keycode.TAB]), (KEY,  [Keycode.KEYPAD_TWO])),
+    (16): ((KEY, [Keycode.M]), (KEY,  [Keycode.END]), (KEY,  [Keycode.KEYPAD_ONE])),
+    (17): ((KEY, [Keycode.N]), (KEY,  [Keycode.PAUSE]), (KEY,  [Keycode.KEYPAD_ZERO])),
 
-    (18): (KEY, [Keycode.CONTROL], [Keycode.CONTROL], [Keycode.CONTROL]),
-    (19): (KEY, [Keycode.SPACEBAR], [Keycode.SPACEBAR], [Keycode.SPACEBAR]),
-    (20): (OTHER, [], [], []),
+    (18): ((KEY, [Keycode.CONTROL]), (KEY,  [Keycode.CONTROL]),
+           (KEY,  [Keycode.CONTROL])),
+    (19): ((KEY, [Keycode.SPACEBAR]), (KEY,  [Keycode.SPACEBAR]),
+           (KEY,  [Keycode.SPACEBAR])),
+    (20): ((OTHER, []), (OTHER,  []), (OTHER,  [])),
 
 }
 ~~~~
