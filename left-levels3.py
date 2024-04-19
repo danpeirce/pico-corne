@@ -115,6 +115,7 @@ while True:
                     else:
                         layer = layer + 1
                         led.value = False
+                        kbd.release_all()
                         if layer > 2:
                             layer = 0
                             led.value = True
@@ -136,5 +137,6 @@ while True:
         if switch_state[12] == 1 and switch_state[20] == 1:
             layer = 0
             led.value = True
+            kbd.release_all()
 
     time.sleep(0.01)  # debounce
