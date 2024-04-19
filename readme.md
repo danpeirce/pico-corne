@@ -28,6 +28,9 @@ The design goals are for a DIY keyboard in a Corne like layout.
 
 ## Implementation Progress
 
+In this document I refer to layers 1, 2 and 3. In the current code the corresponding layers are numbered 0, 1 and 2. This departure occurred when the keymaps were altered 
+to allow for media keys.
+
 ### Left Side
 
 * The base layer 1 does the alphabetic characters.
@@ -62,14 +65,11 @@ media
 
 There are two versions of the left side keymap.
 
-* left.py contains twelve function keys on the third level. 
+* left-levels3.py contains twelve function keys on the third level. 
 * left-media.py has media keys in place of some of the function keys.
 
-Either file can be copied to code.py on the CIRCUITPY drive for the left keyboard to change to the other layout. I don't use
-function keys often and almost never use the function keys past F5.
-
-The format of the two left keymaps is different because the original format used was not adequate for the addition of media 
-controls which were first used in **left-media.py**.
+Either file can be copied to code.py on the CIRCUITPY drive for the left keyboard to change to the other layout. Historically I was not using function keys 
+above F5 but this has changed with some software I have been exploring recently.
 
 #### From left-levels3.py
 
@@ -103,7 +103,8 @@ keymap = {
            (KEY, [Keycode.LEFT_SHIFT]), (KEY, [Keycode.LEFT_SHIFT])),
     (13): ((KEY, [Keycode.Z]),
            (KEY, [Keycode.LEFT_BRACKET]), (KEY, [Keycode.GRAVE_ACCENT])),
-    (14): ((KEY, [Keycode.X]), (KEY, [Keycode.RIGHT_BRACKET]), (KEY, [Keycode.ALT])),
+    (14): ((KEY, [Keycode.X]), 
+	       (KEY, [Keycode.RIGHT_BRACKET]), (MEDIA, ConsumerControlCode.MUTE)),
     (15): ((KEY, [Keycode.C]), (KEY, [Keycode.MINUS]), (KEY, [Keycode.WINDOWS])),
     (16): ((KEY, [Keycode.V]), (KEY, [Keycode.EQUALS]), (KEY, [Keycode.QUOTE])),
     (17): ((KEY, [Keycode.B]), (KEY, [Keycode.BACKSLASH]), (KEY, [Keycode.CAPS_LOCK])),
