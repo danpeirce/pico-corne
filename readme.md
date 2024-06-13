@@ -283,3 +283,10 @@ pins = (
 # The 3D Printed Case
 
 See https://github.com/danpeirce/scad-keyboard-cases?tab=readme-ov-file#corne-inspired-keyboard-case-modified-to-use-a-raspberry-pi-pico
+
+
+## Experimenting with SVG file
+
+I have created a SVG file  of the left side first layer. Testing to see how this looks on Github.
+
+![](img/layer1_left.svg)
