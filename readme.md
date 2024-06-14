@@ -289,6 +289,10 @@ See https://github.com/danpeirce/scad-keyboard-cases?tab=readme-ov-file#corne-in
 
 I have created a SVG file  of the left side first layer. Testing to see how this looks on Github.
 
+### Layer 1 Letters
+
 ![lAYER 1](img/layer1.svg)	
+
+### Layer 2 Numerals and Symbols on the left; Navigation on the right
 
 ![lAYER 2](img/layer2.svg)
