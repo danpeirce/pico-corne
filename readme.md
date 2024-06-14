@@ -289,4 +289,6 @@ See https://github.com/danpeirce/scad-keyboard-cases?tab=readme-ov-file#corne-in
 
 I have created a SVG file  of the left side first layer. Testing to see how this looks on Github.
 
-![](img/layer1.svg) 
+![lAYER 1](img/layer1.svg)	
+
+![lAYER 2](img/layer2.svg)
