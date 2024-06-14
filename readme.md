@@ -49,17 +49,23 @@ that side is incremented by one.
 On the left side the combination **left-shift + left-Layer** switches to layer1.
 On the right side the combination **right-shift + right-Layer** switches to layer1.
 
+#### Layer 1 Letters
 
-![](Layer1.png)  ![](Layer1R.png)
+![lAYER 1](img/layer1.svg)	
 
-![](Layer2.png)  ![](Layer2R.png)
+#### Layer 2 Numerals and Symbols on the left; Navigation on the right
 
-![](Layer3.png)  ![](Layer3R.png)
+![lAYER 2](img/layer2.svg)	
 
-media
+#### Layer 3 Function Keys on the left  NumPad on the right
+
+![lAYER 3](img/layer3.svg)
+
+#### media (not using)
 
 ![](Layer3media.png)
 
+Stopped using this version of layer three because Blender makes use of several function keys that I had not used previously.
 
 ### Left side keymap dictionary
 
@@ -285,14 +291,3 @@ pins = (
 See https://github.com/danpeirce/scad-keyboard-cases?tab=readme-ov-file#corne-inspired-keyboard-case-modified-to-use-a-raspberry-pi-pico
 
 
-## Experimenting with SVG file
-
-I have created a SVG file  of the left side first layer. Testing to see how this looks on Github.
-
-### Layer 1 Letters
-
-![lAYER 1](img/layer1.svg)	
-
-### Layer 2 Numerals and Symbols on the left; Navigation on the right
-
-![lAYER 2](img/layer2.svg)
