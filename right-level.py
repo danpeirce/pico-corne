@@ -70,7 +70,7 @@ keymap = {
           (KEY,  [Keycode.KEYPAD_FIVE])),
     (10): ((KEY, [Keycode.J]), (KEY,  [Keycode.LEFT_ARROW]),
            (KEY,  [Keycode.KEYPAD_FOUR])),
-    (11): ((KEY, [Keycode.H]), (KEY,  [Keycode.SCROLL_LOCK]),
+    (11): ((KEY, [Keycode.H]), (KEY,  [Keycode.WINDOWS]i),
            (KEY,  [Keycode.KEYPAD_ASTERISK])),
 
     (12): ((KEY, [Keycode.RIGHT_SHIFT]), (KEY,  [Keycode.RIGHT_SHIFT]),
